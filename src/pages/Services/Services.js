@@ -2,7 +2,7 @@ import React , {forwardRef} from 'react';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 import { InfoSection, Pricing, Footer } from '../../components';
 
-const Home = forwardRef((props, ref) => {
+const Services = forwardRef((props, ref) => {
   return (
     <div ref={ref}>
       <Pricing  />
@@ -10,4 +10,4 @@ const Home = forwardRef((props, ref) => {
   )
 });
 
-export default Home
+export default Services;

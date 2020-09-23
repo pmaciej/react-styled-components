@@ -1,9 +1,10 @@
 import React, {useRef} from 'react';
 import GlobalStyle from './globalStyles';
-import { HashRouter} from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 import { Navbar, Footer } from './components';
-import Home from './pages/HomePage/Home';
-import Products from './pages/Products/Products'
+import Services from './pages/Services/Services';
+import Products from './pages/Products/Products';
+import About from './pages/About/About';
 import ScrollToTop from './components/ScrollToTop';
 
 // function App() {
@@ -29,20 +30,21 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const homeRef = useRef(null);
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
+  const productsRef = useRef(null);
+  const servicesRef = useRef(null);
   const contactRef = useRef(null);
 
   return (
     <div ref={homeRef} className="App">
  
-      <HashRouter>
+      <BrowserRouter>
       <GlobalStyle />
-      <Navbar refs={{ aboutRef, contactRef, heroRef, homeRef }} />
-        <Home ref={aboutRef} />
-        <Products ref={heroRef} />
+      <Navbar refs={{ servicesRef, contactRef, productsRef, homeRef }} />
+      <About />
+        <Services ref={servicesRef} />
+        <Products ref={productsRef} />
         <Footer {...Footer} ref={contactRef} />
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

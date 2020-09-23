@@ -25,7 +25,8 @@ import {
   SocialIcon,
   WebsiteRights,
   SocialIcons,
-  SocialIconLink
+  SocialIconLink,
+  Img
 } from './Footer.elements';
 
 const Footer = forwardRef((props, ref) => {
@@ -38,7 +39,7 @@ const Footer = forwardRef((props, ref) => {
         <FooterSubText>You can unsubscribe at any time.</FooterSubText>
         <Form>
           <FormInput name='email' type='email' placeholder='Your Email' />
-          <Button fontBig>Subscribe</Button>
+          <Button onClick={(e) => e.preventDefault()} fontBig >Subscribe</Button>
         </Form>
       </FooterSubscription>
       <FooterLinksContainer>
@@ -79,10 +80,9 @@ const Footer = forwardRef((props, ref) => {
       <SocialMedia>
         <SocialMediaWrap>
           <SocialLogo to='/'>
-            <SocialIcon />
-            ULTRA
+          <Img src={require('../../images/ultra-logo3.png')} alt={"image"} />
           </SocialLogo>
-          <WebsiteRights>ULTRA © 2020</WebsiteRights>
+          <WebsiteRights>ULTRA DESIGN © 2020</WebsiteRights>
           <SocialIcons>
             <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
               <FaFacebook />

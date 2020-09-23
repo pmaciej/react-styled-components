@@ -3,36 +3,59 @@ import { useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button }  from '../../globalStyles';
-import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } from './Navbar.elements';
+import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink, Img } from './Navbar.elements';
 
 
 
 
 const Navbar = ({ refs }) => {
   const location = useLocation();
+  
+  
+//   const [scrollPosition, setScrollPosition] = useState(0);
+//   const handleScroll = (refs, location) => {
+//       const position = window.pageYOffset;
+//       setScrollPosition(position);
+     
 
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener('scroll', handleScroll, { passive: true });
+//     return () => {
+//         window.removeEventListener('scroll', handleScroll);
+//     };
+// }, []);
+  
+  
   useEffect(() => {
-    console.log("location", location.pathname);
+    console.log("location", location);
     switch (location.pathname) {
       case "/services":
-        scrollSmoothHandler(refs.aboutRef);
+        scrollSmoothHandler(refs.servicesRef);
+      
         break;
       case "/products":
-        scrollSmoothHandler(refs.heroRef);
+        scrollSmoothHandler(refs.productsRef);
+
         break;
         case "/sign-up":
           scrollSmoothHandler(refs.contactRef);
+
           break;  
 
       default:
         scrollSmoothHandler(refs.homeRef);
+  
         break;
+        
     }
   }, [location, refs]);
+
  
-  const scrollSmoothHandler = ref => {
+  const scrollSmoothHandler = refs => {
     console.log("Triggered.");
-    ref.current.scrollIntoView({ behavior: "smooth" });
+    refs.current.scrollIntoView({ behavior: "smooth" });
   };
  
   const [click, setClick] = useState(false);
@@ -60,39 +83,42 @@ const Navbar = ({ refs }) => {
 
 
 
+
+
+
+
   return (
     <>
     <IconContext.Provider value={{ color: '#fff'}}>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/" onClick={closeMobileMenu}>
-            <NavIcon />
-            ULTRA
+          <NavLogo smooth to="/" replace onClick={closeMobileMenu}>
+          <Img src={require('../../images/ultra-logo3.png')} alt={"image"} />
           </NavLogo>
           <MobileIcon onClick={handleClick}>{click ? <FaTimes /> : <FaBars />}</MobileIcon>
           <NavMenu onClick={handleClick} click={click}>
             <NavItem>
-              <NavLinks to='/'>
+              <NavLinks smooth to='/' replace>
                 Home
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks smooth to='/services'>
+              <NavLinks smooth to='/services' replace>
                 Services
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks smooth to='/products'>
+              <NavLinks smooth to='/products' replace>
                 Products
               </NavLinks>
             </NavItem>
             <NavItemBtn>
               {button ? (
-              <NavBtnLink smooth to="/sign-up">
+              <NavBtnLink smooth to="/sign-up" replace>
                 <Button primary>SIGN UP</Button>
               </NavBtnLink>
               ) : (
-                <NavBtnLink smooth to="/sign-up">
+                <NavBtnLink smooth to="/sign-up" replace>
                   <Button fontBig primary>
                     SIGN UP
                   </Button>

@@ -5,7 +5,7 @@ import { InfoSection, Pricing, Footer } from '../../components';
 const Products = forwardRef((props, ref) => {
   return (
     <div ref={ref} >
-      <InfoSection {...homeObjThree}  />
+      <InfoSection {...homeObjTwo}  />
     </div>
   )
 })

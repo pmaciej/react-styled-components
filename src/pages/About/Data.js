@@ -10,7 +10,7 @@ export const homeObjOne = {
   headline: 'Lead Generation Specialist for Online Buisnesses', 
   lightText:true, 
   topLine: 'Marketing Agency',
-  img: require('../../images/3.jpg'), 
+  img: require('../../images/1.svg'), 
   alt: 'Image', 
   start: ''
 };
@@ -34,17 +34,17 @@ export const homeObjTwo = {
 
 export const homeObjThree = {
   id: 3,
-  lightBg: true,
+  lightBg: false,
   primary: true, 
   imgStart: '', 
-  lightTopLine: false, 
-  lightTextDesc: false, 
-  buttonLabel: 'Feedback', 
-  description: 'Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. ', 
-  headline: 'Objectively innovate empowered products', 
-  lightText:false, 
-  topLine: 'Dev Ops',
-  img: require('../../images/4.jpg'), 
+  lightTopLine: true, 
+  lightTextDesc: true, 
+  buttonLabel: 'Get Sarted', 
+  description: 'We help business owners increase their revenue. Our team of unique specialist can help you acheive your business goals', 
+  headline: 'Lead Generation Specialist for Online Buisnesses', 
+  lightText:true, 
+  topLine: 'Marketing Agency',
+  img: require('../../images/2.jpg'), 
   alt: 'Image', 
   start: ''
 };
